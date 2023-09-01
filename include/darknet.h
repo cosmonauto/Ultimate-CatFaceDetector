@@ -34,3 +34,25 @@ extern "C" {
 #endif
 
 typedef struct{
+    int classes;
+    char **names;
+} metadata;
+
+metadata get_metadata(char *file);
+
+typedef struct{
+    int *leaf;// extern "C"
+// {
+    int n;
+    int *parent;
+    int *child;
+    int *group;
+    char **name;
+
+    int groups;
+    int *group_size;
+    int *group_offset;
+} tree;
+
+typedef enum{
+    LOGISTIC, RELU, RELIE, LINEAR, RAMP, TANH, PLSE, LEAKY

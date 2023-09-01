@@ -116,4 +116,19 @@ struct layer{
     void (*backward)  (struct layer, struct network);
     void (*update)    (struct layer, update_args);
     void (*forward_gpu)   (struct layer, struct network);
-    voi
+    void (*backward_gpu)  (struct layer, struct network);
+    void (*update_gpu)    (struct layer, update_args);
+    int batch_normalize;
+    int shortcut;
+    int batch;
+    int forced;
+    int flipped;
+    int inputs;
+    int outputs;
+    int nweights;
+    int nbiases;
+    int extra;
+    int truths;
+    int h,w,c;
+    int out_h, out_w, out_c;
+    int n;

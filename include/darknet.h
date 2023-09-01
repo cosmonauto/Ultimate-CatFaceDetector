@@ -178,4 +178,25 @@ struct layer{
     float coord_scale;// extern "C"
 // {
     float object_scale;
-    float noobj
+    float noobject_scale;
+    float mask_scale;
+    float class_scale;
+    int bias_match;
+    int random;
+    float thresh;
+    int classfix;
+    int absolute;
+
+    int onlyforward;
+    int stopbackward;
+    int dontload;
+    int dontloadscales;
+
+    float temperature;
+    float probability;
+    float scale;
+
+    char  * cweights;
+    int   * indexes;
+    int   * input_layers;
+    int   * i

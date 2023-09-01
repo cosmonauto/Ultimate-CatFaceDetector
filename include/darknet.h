@@ -155,4 +155,27 @@ struct layer{
     float jitter;
     float saturation;
     float exposure;
-    float s
+    float shift;
+    float ratio;
+    float learning_rate_scale;
+    int softmax;
+    int classes;
+    int coords;
+    int background;
+    int rescore;
+    int objectness;
+    int does_cost;
+    int joint;
+    int noadjust;
+    int reorg;
+    int log;
+    int tanh;
+
+    float alpha;
+    float beta;
+    float kappa;
+
+    float coord_scale;// extern "C"
+// {
+    float object_scale;
+    float noobj

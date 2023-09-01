@@ -81,4 +81,29 @@ typedef enum {
     BATCHNORM,
     NETWORK,
     XNOR,
-    
+    REGION,
+    REORG,
+    BLANK
+} LAYER_TYPE;
+
+typedef enum{
+    SSE, MASKED, L1, SEG, SMOOTH
+} COST_TYPE;
+
+typedef struct{
+    int batch;
+    float learning_rate;
+    float momentum;
+    float decay;
+    int adam;
+    float B1;
+    float B2;
+    float eps;
+    int t;
+} update_args;
+
+struct network;
+typedef struct network network;
+
+struct layer;
+typedef struct

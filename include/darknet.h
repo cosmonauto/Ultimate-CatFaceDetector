@@ -132,3 +132,27 @@ struct layer{
     int h,w,c;
     int out_h, out_w, out_c;
     int n;
+    int max_boxes;
+    int groups;
+    int size;
+    int side;
+    int stride;
+    int reverse;
+    int flatten;
+    int spatial;
+    int pad;
+    int sqrt;
+    int flip;
+    int index;
+    int binary;
+    int xnor;
+    int steps;
+    int hidden;
+    int truth;
+    float smooth;
+    float dot;
+    float angle;
+    float jitter;
+    float saturation;
+    float exposure;
+    float s

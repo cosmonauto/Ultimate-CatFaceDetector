@@ -199,4 +199,22 @@ struct layer{
     char  * cweights;
     int   * indexes;
     int   * input_layers;
-    int   * i
+    int   * input_sizes;
+    int   * map;
+    float * rand;
+    float * cost;
+    float * state;
+    float * prev_state;
+    float * forgot_state;
+    float * forgot_delta;
+    float * state_delta;
+    float * combine_cpu;
+    float * combine_delta_cpu;
+
+    float * concat;
+    float * concat_delta;
+
+    float * binary_weights;
+
+    float * biases;
+    float * bias_up

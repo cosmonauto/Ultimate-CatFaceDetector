@@ -217,4 +217,26 @@ struct layer{
     float * binary_weights;
 
     float * biases;
-    float * bias_up
+    float * bias_updates;
+
+    float * scales;
+    float * scale_updates;
+
+    float * weights;
+    float * weight_updates;
+
+    float * delta;
+    float * output;
+    float * squared;
+    float * norms;
+
+    float * spatial_mean;
+    float * mean;
+    float * variance;
+
+    float * mean_delta;
+    float * variance_delta;
+
+    float * rolling_mean;
+    float * rolling_variance;
+

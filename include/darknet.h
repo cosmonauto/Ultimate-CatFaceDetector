@@ -353,4 +353,19 @@ struct layer{
     float * forgot_state_gpu;
     float * forgot_delta_gpu;
     float * state_gpu;
-    fl
+    float * state_delta_gpu;
+    float * gate_gpu;
+    float * gate_delta_gpu;
+    float * save_gpu;
+    float * save_delta_gpu;
+    float * concat_gpu;
+    float * concat_delta_gpu;
+
+    float * binary_input_gpu;
+    float * binary_weights_gpu;
+
+    float * mean_gpu;
+    float * variance_gpu;
+
+    float * rolling_mean_gpu;
+    float * rolling_va

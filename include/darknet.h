@@ -280,4 +280,18 @@ struct layer{
 
     struct layer *reset_layer;
     struct layer *update_layer;
-    s
+    struct layer *state_layer;
+
+    struct layer *input_gate_layer;
+    struct layer *state_gate_layer;
+    struct layer *input_save_layer;
+    struct layer *state_save_layer;
+    struct layer *input_state_layer;
+    struct layer *state_state_layer;
+
+    struct layer *input_z_layer;
+    struct layer *state_z_layer;
+
+    struct layer *input_r_layer;
+    struct layer *state_r_layer;
+

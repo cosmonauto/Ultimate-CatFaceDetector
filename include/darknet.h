@@ -262,4 +262,22 @@ struct layer{
     float *temp3_cpu;
 
     float *dh_cpu;
-    float *hh_cpu
+    float *hh_cpu;
+    float *prev_cell_cpu;
+    float *cell_cpu;
+    float *f_cpu;
+    float *i_cpu;
+    float *g_cpu;
+    float *o_cpu;
+    float *c_cpu;
+    float *dc_cpu;
+
+    float * binary_input;
+
+    struct layer *input_layer;
+    struct layer *self_layer;
+    struct layer *output_layer;
+
+    struct layer *reset_layer;
+    struct layer *update_layer;
+    s

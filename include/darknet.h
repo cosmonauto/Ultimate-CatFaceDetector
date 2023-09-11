@@ -335,4 +335,22 @@ struct layer{
     float *f_gpu;
     float *i_gpu;
     float *g_gpu;
-    float *o_gpu
+    float *o_gpu;
+    float *c_gpu;
+    float *dc_gpu;
+
+    float *m_gpu;
+    float *v_gpu;
+    float *bias_m_gpu;
+    float *scale_m_gpu;
+    float *bias_v_gpu;
+    float *scale_v_gpu;
+
+    float * combine_gpu;
+    float * combine_delta_gpu;
+
+    float * prev_state_gpu;
+    float * forgot_state_gpu;
+    float * forgot_delta_gpu;
+    float * state_gpu;
+    fl

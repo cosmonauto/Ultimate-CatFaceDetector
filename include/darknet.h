@@ -310,4 +310,29 @@ struct layer{
     struct layer *wf;
     struct layer *ui;
     struct layer *wi;
-    struct layer
+    struct layer *ug;
+    struct layer *wg;
+
+    tree *softmax_tree;
+
+    size_t workspace_size;
+
+#ifdef GPU
+    int *indexes_gpu;
+
+    float *z_gpu;
+    float *r_gpu;
+    float *h_gpu;
+
+    float *temp_gpu;
+    float *temp2_gpu;
+    float *temp3_gpu;
+
+    float *dh_gpu;
+    float *hh_gpu;
+    float *prev_cell_gpu;
+    float *cell_gpu;
+    float *f_gpu;
+    float *i_gpu;
+    float *g_gpu;
+    float *o_gpu

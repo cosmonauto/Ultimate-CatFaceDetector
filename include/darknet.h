@@ -295,3 +295,19 @@ struct layer{
     struct layer *input_r_layer;
     struct layer *state_r_layer;
 
+    struct layer *input_h_layer;
+    struct layer *state_h_layer;
+
+    struct layer *wz;
+    struct layer *uz;
+    struct layer *wr;
+    struct layer *ur;
+    struct layer *wh;
+    struct layer *uh;
+    struct layer *uo;
+    struct layer *wo;
+    struct layer *uf;
+    struct layer *wf;
+    struct layer *ui;
+    struct layer *wi;
+    struct layer

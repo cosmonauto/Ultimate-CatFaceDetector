@@ -240,3 +240,26 @@ struct layer{
     float * rolling_mean;
     float * rolling_variance;
 
+    float * x;
+    float * x_norm;
+
+    float * m;
+    float * v;
+
+    float * bias_m;
+    float * bias_v;
+    float * scale_m;
+    float * scale_v;
+
+
+    float *z_cpu;
+    float *r_cpu;
+    float *h_cpu;
+    float * prev_state_cpu;
+
+    float *temp_cpu;
+    float *temp2_cpu;
+    float *temp3_cpu;
+
+    float *dh_cpu;
+    float *hh_cpu

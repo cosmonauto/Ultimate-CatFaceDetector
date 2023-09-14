@@ -397,4 +397,24 @@ struct layer{
     cudnnTensorDescriptor_t dsrcTensorDesc, ddstTensorDesc;
     cudnnTensorDescriptor_t normTensorDesc;
     cudnnFilterDescriptor_t weightDesc;
-    cudnnFilterDescriptor_t dweightD
+    cudnnFilterDescriptor_t dweightDesc;
+    cudnnConvolutionDescriptor_t convDesc;
+    cudnnConvolutionFwdAlgo_t fw_algo;
+    cudnnConvolutionBwdDataAlgo_t bd_algo;
+    cudnnConvolutionBwdFilterAlgo_t bf_algo;
+#endif
+#endif
+};
+
+void free_layer(layer);
+
+typedef enum {
+    CONSTANT, STEP, EXP, POLY, STEPS, SIG, RANDOM
+} learning_rate_policy;
+
+typedef struct network{
+    int n;
+    int batch;
+    size_t *seen;
+    int *t;
+    float

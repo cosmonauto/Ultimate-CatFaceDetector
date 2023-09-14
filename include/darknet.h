@@ -385,4 +385,16 @@ struct layer{
 
     float * scales_gpu;
     float * scale_updates_gpu;
-    float * sc
+    float * scale_change_gpu;
+
+    float * output_gpu;
+    float * delta_gpu;
+    float * rand_gpu;
+    float * squared_gpu;
+    float * norms_gpu;
+#ifdef CUDNN
+    cudnnTensorDescriptor_t srcTensorDesc, dstTensorDesc;
+    cudnnTensorDescriptor_t dsrcTensorDesc, ddstTensorDesc;
+    cudnnTensorDescriptor_t normTensorDesc;
+    cudnnFilterDescriptor_t weightDesc;
+    cudnnFilterDescriptor_t dweightD

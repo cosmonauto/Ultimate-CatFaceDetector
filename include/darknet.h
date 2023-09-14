@@ -417,4 +417,22 @@ typedef struct network{
     int batch;
     size_t *seen;
     int *t;
-    float
+    float epoch;
+    int subdivisions;
+    layer *layers;
+    float *output;
+    learning_rate_policy policy;
+
+    float learning_rate;
+    float momentum;
+    float decay;
+    float gamma;
+    float scale;
+    float power;
+    int time_steps;
+    int step;
+    int max_batches;
+    float *scales;
+    int   *steps;
+    int num_steps;
+    int bur

@@ -460,4 +460,30 @@ typedef struct network{
     tree *hierarchy;
 
     float *input;
-    flo
+    float *truth;
+    float *delta;
+    float *workspace;
+    int train;
+    int index;
+    float *cost;
+
+#ifdef GPU
+    float *input_gpu;
+    float *truth_gpu;
+    float *delta_gpu;
+    float *output_gpu;
+#endif
+
+} network;
+
+typedef struct {
+    int w;
+    int h;
+    float scale;
+    float rad;
+    float dx;
+    float dy;
+    float aspect;
+} augment_args;
+
+typede

@@ -486,4 +486,31 @@ typedef struct {
     float aspect;
 } augment_args;
 
-typede
+typedef struct {
+    int w;
+    int h;
+    int c;
+    float *data;
+} image;
+
+typedef struct{
+    float x, y, w, h;
+} box;
+
+typedef struct matrix{
+    int rows, cols;
+    float **vals;
+} matrix;
+
+
+typedef struct{
+    int w, h;
+    matrix X;
+    matrix y;
+    int shallow;
+    int *num_boxes;
+    box **boxes;
+} data;
+
+typedef enum {
+    CLASSIFICATIO

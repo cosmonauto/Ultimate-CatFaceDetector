@@ -435,4 +435,29 @@ typedef struct network{
     float *scales;
     int   *steps;
     int num_steps;
-    int bur
+    int burn_in;
+
+    int adam;
+    float B1;
+    float B2;
+    float eps;
+
+    int inputs;
+    int outputs;
+    int truths;
+    int notruth;
+    int h, w, c;
+    int max_crop;
+    int min_crop;
+    int center;
+    float angle;
+    float aspect;
+    float exposure;
+    float saturation;
+    float hue;
+
+    int gpu_index;
+    tree *hierarchy;
+
+    float *input;
+    flo

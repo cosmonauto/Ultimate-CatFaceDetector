@@ -545,3 +545,23 @@ typedef struct load_args{
     data *d;
     image *im;
     image *resized;
+    data_type type;
+    tree *hierarchy;
+} load_args;
+
+typedef struct{
+    int id;
+    float x,y,w,h;
+    float left, right, top, bottom;
+} box_label;
+
+
+network load_network(char *cfg, char *weights, int clear);
+network *load_network_p(char *cfg, char *weights, int clear);
+load_args get_base_args(network net);
+
+void free_data(data d);
+
+typedef struct node{
+    void *val;
+    struct node *ne

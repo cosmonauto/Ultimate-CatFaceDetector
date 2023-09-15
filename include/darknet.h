@@ -564,4 +564,23 @@ void free_data(data d);
 
 typedef struct node{
     void *val;
-    struct node *ne
+    struct node *next;
+    struct node *prev;
+} node;
+
+typedef struct list{
+    int size;
+    node *front;
+    node *back;
+} list;
+
+pthread_t load_data(load_args args);
+list *read_data_cfg(char *filename);
+list *read_cfg(char *filename);
+
+void forward_network(network net);
+void backward_network(network net);
+void update_network(network net);
+
+
+void axpy_cpu(int N, float AL

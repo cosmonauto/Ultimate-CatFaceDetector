@@ -513,4 +513,12 @@ typedef struct{
 } data;
 
 typedef enum {
-    CLASSIFICATIO
+    CLASSIFICATION_DATA, DETECTION_DATA, CAPTCHA_DATA, REGION_DATA, IMAGE_DATA, COMPARE_DATA, WRITING_DATA, SWAG_DATA, TAG_DATA, OLD_CLASSIFICATION_DATA, STUDY_DATA, DET_DATA, SUPER_DATA, LETTERBOX_DATA, REGRESSION_DATA, SEGMENTATION_DATA, INSTANCE_DATA
+} data_type;
+
+typedef struct load_args{
+    int threads;
+    char **paths;
+    char *path;
+    int n;
+    int m;

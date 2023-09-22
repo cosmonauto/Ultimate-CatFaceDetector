@@ -590,4 +590,12 @@ void normalize_cpu(float *x, float *mean, float *variance, int batch, int filter
 
 int best_3d_shift_r(image a, image b, int min, int max);
 #ifdef GPU
-void axpy_gpu(int N, float ALP
+void axpy_gpu(int N, float ALPHA, float * X, int INCX, float * Y, int INCY);
+void fill_gpu(int N, float ALPHA, float * X, int INCX);
+void scal_gpu(int N, float ALPHA, float * X, int INCX);
+void copy_gpu(int N, float * X, int INCX, float * Y, int INCY);
+
+void cuda_set_device(int n);
+void cuda_free(float *x_gpu);
+float *cuda_make_array(float *x, size_t n);
+void cuda_pull_array(float *x_gp

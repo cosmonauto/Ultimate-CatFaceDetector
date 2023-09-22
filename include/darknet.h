@@ -583,4 +583,11 @@ void backward_network(network net);
 void update_network(network net);
 
 
-void axpy_cpu(int N, float AL
+void axpy_cpu(int N, float ALPHA, float *X, int INCX, float *Y, int INCY);
+void copy_cpu(int N, float *X, int INCX, float *Y, int INCY);
+void scal_cpu(int N, float ALPHA, float *X, int INCX);
+void normalize_cpu(float *x, float *mean, float *variance, int batch, int filters, int spatial);
+
+int best_3d_shift_r(image a, image b, int min, int max);
+#ifdef GPU
+void axpy_gpu(int N, float ALP

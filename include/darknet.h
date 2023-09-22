@@ -608,4 +608,14 @@ void update_network_gpu(network net);
 
 float train_networks(network *nets, int n, data d, int interval);
 void sync_nets(network *nets, int n, int interval);
-void harmless
+void harmless_update_network_gpu(network net);
+#endif
+void save_image_png(image im, const char *name);
+void get_next_batch(data d, int n, int offset, float *X, float *y);
+void grayscale_image_3c(image im);
+void normalize_image(image p);
+void matrix_to_csv(matrix m);
+float train_network_sgd(network net, data d, int n);
+void rgbgr_image(image im);
+data copy_data(data d);
+dat

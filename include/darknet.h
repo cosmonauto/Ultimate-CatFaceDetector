@@ -598,4 +598,14 @@ void copy_gpu(int N, float * X, int INCX, float * Y, int INCY);
 void cuda_set_device(int n);
 void cuda_free(float *x_gpu);
 float *cuda_make_array(float *x, size_t n);
-void cuda_pull_array(float *x_gp
+void cuda_pull_array(float *x_gpu, float *x, size_t n);
+float cuda_mag_array(float *x_gpu, size_t n);
+void cuda_push_array(float *x_gpu, float *x, size_t n);
+
+void forward_network_gpu(network net);
+void backward_network_gpu(network net);
+void update_network_gpu(network net);
+
+float train_networks(network *nets, int n, data d, int interval);
+void sync_nets(network *nets, int n, int interval);
+void harmless

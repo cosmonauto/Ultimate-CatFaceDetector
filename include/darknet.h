@@ -625,4 +625,14 @@ void matrix_add_matrix(matrix from, matrix to);
 void scale_matrix(matrix m, float scale);
 matrix csv_to_matrix(char *filename);
 float *network_accuracies(network net, data d, int n);
-float train_network_
+float train_network_datum(network net);
+image make_random_image(int w, int h, int c);
+
+void denormalize_connected_layer(layer l);
+void denormalize_convolutional_layer(layer l);
+void statistics_connected_layer(layer l);
+void rescale_weights(layer l, float scale, float trans);
+void rgbgr_weights(layer l);
+image *get_weights(layer l);
+
+void demo(char *cfgfile, char *w

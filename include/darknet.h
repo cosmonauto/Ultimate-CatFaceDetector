@@ -618,4 +618,11 @@ void matrix_to_csv(matrix m);
 float train_network_sgd(network net, data d, int n);
 void rgbgr_image(image im);
 data copy_data(data d);
-dat
+data concat_data(data d1, data d2);
+data load_cifar10_data(char *filename);
+float matrix_topk_accuracy(matrix truth, matrix guess, int k);
+void matrix_add_matrix(matrix from, matrix to);
+void scale_matrix(matrix m, float scale);
+matrix csv_to_matrix(char *filename);
+float *network_accuracies(network net, data d, int n);
+float train_network_

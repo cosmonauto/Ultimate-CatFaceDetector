@@ -639,4 +639,12 @@ void demo(char *cfgfile, char *weightfile, float thresh, int cam_index, const ch
 void get_detection_boxes(layer l, int w, int h, float thresh, float **probs, box *boxes, int only_objectness);
 
 char *option_find_str(list *l, char *key, char *def);
-int o
+int option_find_int(list *l, char *key, int def);
+
+network parse_network_cfg(char *filename);
+void save_weights(network net, char *filename);
+void load_weights(network *net, char *filename);
+void save_weights_upto(network net, char *filename, int cutoff);
+void load_weights_upto(network *net, char *filename, int start, int cutoff);
+
+void zero_objec

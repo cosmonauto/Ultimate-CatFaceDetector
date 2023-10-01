@@ -652,4 +652,11 @@ void get_region_boxes(layer l, int w, int h, int netw, int neth, float thresh, f
 void free_network(network net);
 void set_batch_network(network *net, int b);
 void set_temp_network(network net, float t);
-image load_ima
+image load_image(char *filename, int w, int h, int c);
+image load_image_color(char *filename, int w, int h);
+image make_image(int w, int h, int c);
+image resize_image(image im, int w, int h);
+image letterbox_image(image im, int w, int h);
+image crop_image(image im, int dx, int dy, int w, int h);
+image resize_min(image im, int min);
+image threshold_image(image im, float thre

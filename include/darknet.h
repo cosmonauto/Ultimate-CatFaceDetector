@@ -659,4 +659,13 @@ image resize_image(image im, int w, int h);
 image letterbox_image(image im, int w, int h);
 image crop_image(image im, int dx, int dy, int w, int h);
 image resize_min(image im, int min);
-image threshold_image(image im, float thre
+image threshold_image(image im, float thresh);
+image mask_to_rgb(image mask);
+int resize_network(network *net, int w, int h);
+void free_matrix(matrix m);
+void test_resize(char *filename);
+void save_image(image p, const char *name);
+void show_image(image p, const char *name);
+image copy_image(image p);
+void draw_box_width(image a, int x1, int y1, int x2, int y2, int w, float r, float g, float b);
+floa

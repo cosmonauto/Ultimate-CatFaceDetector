@@ -668,4 +668,11 @@ void save_image(image p, const char *name);
 void show_image(image p, const char *name);
 image copy_image(image p);
 void draw_box_width(image a, int x1, int y1, int x2, int y2, int w, float r, float g, float b);
-floa
+float get_current_rate(network net);
+void composite_3d(char *f1, char *f2, char *out, int delta);
+data load_data_old(char **paths, int n, int m, char **labels, int k, int w, int h);
+size_t get_current_batch(network net);
+void constrain_image(image im);
+image get_network_image_layer(network net, int i);
+layer get_network_output_layer(network net);
+void top_predictions(network net, int n, int *index

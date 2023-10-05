@@ -675,4 +675,11 @@ size_t get_current_batch(network net);
 void constrain_image(image im);
 image get_network_image_layer(network net, int i);
 layer get_network_output_layer(network net);
-void top_predictions(network net, int n, int *index
+void top_predictions(network net, int n, int *index);
+void flip_image(image a);
+image float_to_image(int w, int h, int c, float *data);
+void ghost_image(image source, image dest, int dx, int dy);
+float network_accuracy(network net, data d);
+void random_distort_image(image im, float hue, float saturation, float exposure);
+void fill_image(image m, float s);
+image grayscale_image(image im);

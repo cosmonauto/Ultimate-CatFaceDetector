@@ -722,4 +722,11 @@ image get_image_from_stream(CvCapture *cap);
 #endif
 #endif
 void free_image(image m);
-float 
+float train_network(network net, data d);
+pthread_t load_data_in_thread(load_args args);
+void load_data_blocking(load_args args);
+list *get_paths(char *filename);
+void hierarchy_predictions(float *predictions, int n, tree *hier, int only_leaves, int stride);
+void change_leaves(tree *t, char *leaf_list);
+
+int find_int_arg(int argc, char **argv, ch

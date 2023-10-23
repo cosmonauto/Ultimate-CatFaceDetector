@@ -749,4 +749,10 @@ void free_list(list *l);
 float mse_array(float *a, int n);
 float variance_array(float *a, int n);
 float mag_array(float *a, int n);
-float mean_a
+float mean_array(float *a, int n);
+void normalize_array(float *a, int n);
+int *read_intlist(char *s, int *n, int d);
+size_t rand_size_t();
+float rand_normal();
+}
+#endif

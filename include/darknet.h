@@ -736,4 +736,17 @@ char *find_char_arg(int argc, char **argv, char *arg, char *def);
 char *basecfg(char *cfgfile);
 void find_replace(char *str, char *orig, char *rep, char *output);
 void free_ptrs(void **ptrs, int n);
-char *fget
+char *fgetl(FILE *fp);
+void strip(char *s);
+float sec(clock_t clocks);
+void **list_to_array(list *l);
+void top_k(float *a, int n, int k, int *index);
+int *read_map(char *filename);
+void error(const char *s);
+int max_index(float *a, int n);
+int sample_array(float *a, int n);
+void free_list(list *l);
+float mse_array(float *a, int n);
+float variance_array(float *a, int n);
+float mag_array(float *a, int n);
+float mean_a

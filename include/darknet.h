@@ -729,4 +729,11 @@ list *get_paths(char *filename);
 void hierarchy_predictions(float *predictions, int n, tree *hier, int only_leaves, int stride);
 void change_leaves(tree *t, char *leaf_list);
 
-int find_int_arg(int argc, char **argv, ch
+int find_int_arg(int argc, char **argv, char *arg, int def);
+float find_float_arg(int argc, char **argv, char *arg, float def);
+int find_arg(int argc, char* argv[], char *arg);
+char *find_char_arg(int argc, char **argv, char *arg, char *def);
+char *basecfg(char *cfgfile);
+void find_replace(char *str, char *orig, char *rep, char *output);
+void free_ptrs(void **ptrs, int n);
+char *fget

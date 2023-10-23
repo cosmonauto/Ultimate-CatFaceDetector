@@ -710,4 +710,16 @@ box *make_boxes(network *net);
 void reset_network_state(network net, int b);
 void reset_network_state(network net, int b);
 
-char **get_labels(char 
+char **get_labels(char *filename);
+void do_nms_sort(box *boxes, float **probs, int total, int classes, float thresh);
+void do_nms_obj(box *boxes, float **probs, int total, int classes, float thresh);
+
+matrix make_matrix(int rows, int cols);
+
+#ifndef __cplusplus
+#ifdef OPENCV
+image get_image_from_stream(CvCapture *cap);
+#endif
+#endif
+void free_image(image m);
+float 

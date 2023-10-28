@@ -27,4 +27,13 @@ private:
 
   void loadCfg( std::string cfgfile );
   void loadWeights( std::string weightsfile );
-  image convertImage( cv::Mat
+  image convertImage( cv::Mat img );
+  std::vector<Detection> getBoxes( int num, box *boxes, float **probs, int classes, cv::Size imgsize );
+
+public:
+  void loadModel( std::string cfgfile, std::string weightfile );
+  void loadModel( char *cfgfile, char *weightfile );
+  std::vector<Detection> detect( cv::Mat img );
+};
+
+#endif

@@ -3,4 +3,28 @@
 
 #include <opencv2/opencv.hpp>
 #include <string>
-#inc
+#include <iostream>
+
+#include <darknet.h>
+
+#include "cuda_runtime.h"
+#include "curand.h"
+#include "cublas_v2.h"
+#include "cudnn.h"
+
+class Darknet
+{
+public:
+  struct Detection
+  {
+    cv::Rect rect;
+    float prob;
+    int obj;
+  };
+
+private:
+  network net;
+
+  void loadCfg( std::string cfgfile );
+  void loadWeights( std::string weightsfile );
+  image convertImage( cv::Mat

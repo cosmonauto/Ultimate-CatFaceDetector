@@ -62,3 +62,58 @@ void Detector::detectFeatures( cv::Mat image, std::vector<cv::Rect> &features )
     else if( detections[i].obj == 1 )   eyes.push_back( detections[i] );
     else                                mouths.push_back( detections[i] );
   }
+
+  //TODO 1: sort the vectors and extract two detections with highest probabilities
+  //TODO 2: determine left and right ears and eyes
+  std::sort ( ears.begin(), ears.end(), sort_prob );
+  std::sort ( eyes.begin(), eyes.end(), sort_prob );
+  std::sort ( mouths.begin(), mouths.end(), sort_prob );
+
+  // for( int i = 0; i < 2 && i < ears.size(); i++ )    features.push_back( ears[i].rect );
+  // for( int i = 0; i < 2 && i < eyes.size(); i++ )    features.push_back( eyes[i].rect );
+  // if( mouths.size() != 0 )                           features.push_back( mouths[0].rect );
+
+  for( int i = 0; i < 2; i++ )
+  {
+    if( i < ears.size() )   features.push_back( ears[i].rect );
+    else                    features.push_back( cv::Rect() );
+  }
+  for( int i = 0; i < 2; i++ )
+  {
+    if( i < eyes.size() )   features.push_back( eyes[i].rect );
+    else                    features.push_back( cv::Rect() );
+  }
+  if( mouths.size() != 0 )  features.push_back( mouths[0].rect );
+  else                      features.push_back( cv::Rect() );
+}
+
+void Detector::drawDetections( cv::Mat &image, std::vector<cv::Rect> detections )
+{
+  int width = image.rows * 0.006;
+  for( int i = 0; i < detections.size(); i++ )
+  {
+    cv::Scalar color;
+    // if( i == FACE )             color = cv::Scalar(255,255,0);
+    if( i == FACE )             continue;
+    else if( i <= RIGHT_EAR )   color = cv::Scalar(255,0,0);
+    else if( i <= RIGHT_EYE )   color = cv::Scalar(0,255,0);
+    else                        color = cv::Scalar(0,0,255);
+    cv::rectangle( image, detections[i], color, width );
+  }
+}
+
+cv::Rect Detector::enlargeRect( const cv::Mat &image, cv::Rect rect, float wf, float hf )
+{
+  cv::Rect enlarged = rect;
+  cv::Size deltaSize( rect.width * wf, rect.height * hf );
+  cv::Point offset( deltaSize.width/2, deltaSize.height/2 );
+  enlarged += deltaSize;
+  enlarged -= offset;
+
+  if( enlarged.x < 0 )  enlarged.x = 0;
+  if( enlarged.y < 0 )  enlarged.y = 0;
+  if( enlarged.br().x >= image.cols ) enlarged.width = image.cols - 1 - enlarged.x;
+  if( enlarged.br().y >= image.rows ) enlarged.height = image.rows - 1 - enlarged.y;
+
+  return enlarged;
+}

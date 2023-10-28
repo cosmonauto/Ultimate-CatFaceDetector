@@ -23,4 +23,15 @@ class Detector
   Darknet _face_detector;
   Darknet _feature_detector;
 
-  cv::Rect detectFace( cv::Mat 
+  cv::Rect detectFace( cv::Mat image );
+  void detectFeatures( cv::Mat image, std::vector<cv::Rect> &features );
+
+public:
+  struct sortProb {
+    bool operator() ( const Darknet::Detection &a, const Darknet::Detection &b )
+    {
+      return (a.prob > b.prob);
+    }
+  } sort_prob;
+  static void drawDetections( cv::Mat &image, std::vector<cv::Rect> detections );
+  static cv

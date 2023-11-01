@@ -45,4 +45,13 @@ void Function::detectMultipleImages( std::string src_path, std::string dst_path 
 
   std::vector<boost::filesystem::path> paths = getImagePathsInFolder( src_path, ".jpg" );
 
-  std::
+  std::cout << "Found " << paths.size() << " images in the folder" << std::endl;
+
+  Detector detector;
+  detector.loadModels( "models/cat_face.cfg", "models/cat_features.cfg" );
+
+  std::cout << std::endl << std::endl;
+
+  for( std::vector<boost::filesystem::path>::iterator it = paths.begin(); it != paths.end(); ++it )
+  {
+    std::stri

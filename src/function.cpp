@@ -9,4 +9,17 @@ void Function::detectSingleImage( std::string src_path, std::string dst_path )
   std::cout << "Detection on a single image: " << src_path << std::endl;
 
   if( show )    std::cout << "Showing detection result" << std::endl;
-  else          std::cout << "Writing detection result to " <<
+  else          std::cout << "Writing detection result to " << write_path << std::endl;
+
+  Detector detector;
+  detector.loadModels( "models/cat_face.cfg", "models/cat_features.cfg" );
+
+  cv::Mat image = cv::imread( src_path );
+  cv::Mat org = image.clone();
+  std::vector<cv::Rect> detections = detector.detect( image );
+
+  Detector::drawDetections( image, detections );
+
+  if( show )
+  {
+    cv::namedWindow

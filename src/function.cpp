@@ -33,4 +33,16 @@ void Function::detectSingleImage( std::string src_path, std::string dst_path )
   }
   else
   {
-    cv::imwrite( wri
+    cv::imwrite( write_path, image );
+  }
+}
+
+void Function::detectMultipleImages( std::string src_path, std::string dst_path )
+{
+  bool show = dst_path.compare("") == 0 ? true : false;
+
+  std::cout << "Detection on multiple images in: " << src_path << std::endl;
+
+  std::vector<boost::filesystem::path> paths = getImagePathsInFolder( src_path, ".jpg" );
+
+  std::

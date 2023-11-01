@@ -54,4 +54,16 @@ void Function::detectMultipleImages( std::string src_path, std::string dst_path 
 
   for( std::vector<boost::filesystem::path>::iterator it = paths.begin(); it != paths.end(); ++it )
   {
-    std::stri
+    std::string imgpath = src_path + "/" + (*it).string();
+    std::cout << "Reading from " << imgpath << std::endl;
+
+    cv::Mat image = cv::imread( imgpath );
+    cv::Mat org = image.clone();
+    std::vector<cv::Rect> detections = detector.detect( image );
+
+    Detector::drawDetections( image, detections );
+
+    if( show )
+    {
+      cv::namedWindow( "original", cv::WINDOW_AUTOSIZE );
+      cv:

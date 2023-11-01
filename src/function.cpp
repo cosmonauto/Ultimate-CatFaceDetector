@@ -22,4 +22,15 @@ void Function::detectSingleImage( std::string src_path, std::string dst_path )
 
   if( show )
   {
-    cv::namedWindow
+    cv::namedWindow( "original", cv::WINDOW_NORMAL );
+    cv::resizeWindow( "original", 800, 800 );
+    cv::imshow( "original", org );
+
+    cv::namedWindow( "detection", cv::WINDOW_NORMAL );
+    cv::resizeWindow( "detection", 800, 800 );
+    cv::imshow( "detection", image );
+    cv::waitKey(0);
+  }
+  else
+  {
+    cv::imwrite( wri

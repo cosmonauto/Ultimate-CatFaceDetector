@@ -81,3 +81,14 @@ void Function::detectMultipleImages( std::string src_path, std::string dst_path 
     }
   }
 }
+
+void Function::detectVideo( std::string src_path, std::string dst_path, bool use_tracking ) {
+    Video video;
+    video.processVideo(src_path, dst_path, use_tracking);
+}
+
+std::vector<boost::filesystem::path> Function::getImagePathsInFolder( const boost::filesystem::path &folder, const std::string &ext )
+{
+  std::vector<boost::filesystem::path>paths;
+
+  i

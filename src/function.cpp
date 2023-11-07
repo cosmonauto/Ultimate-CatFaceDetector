@@ -91,4 +91,11 @@ std::vector<boost::filesystem::path> Function::getImagePathsInFolder( const boos
 {
   std::vector<boost::filesystem::path>paths;
 
-  i
+  if( !boost::filesystem::exists(folder) || !boost::filesystem::is_directory(folder) )  return paths;
+
+  boost::filesystem::recursive_directory_iterator it(folder);
+  boost::filesystem::recursive_directory_iterator endit;
+
+  while( it != endit )
+  {
+    if( boost::filesystem::is_regular_file(*it) && it->path().extension() == ext ) paths.push_back( it-

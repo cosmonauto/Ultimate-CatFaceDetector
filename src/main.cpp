@@ -31,4 +31,17 @@ int main( int argc, char *argv[] )
     else if( !function.compare( "help" ) )      help( argv );
     else
     {
-      cout << "'" << function << "' is an invali
+      cout << "'" << function << "' is an invalid function!" << endl << endl;
+      help( argv );
+    }
+  }
+
+  return 0;
+}
+
+void help( char *argv[] )
+{
+  cout << "usage: " << string( argv[0] ) << " [function] [src_path] (video?)(tracking) (dst_path)" << endl << endl;
+  cout << "function: ['image', 'images', 'video', 'help']" << endl;
+  cout << "\timage: run detection on a single image" << endl;
+  cout << "\timages: run det

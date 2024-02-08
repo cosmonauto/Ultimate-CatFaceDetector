@@ -44,4 +44,9 @@ void help( char *argv[] )
   cout << "usage: " << string( argv[0] ) << " [function] [src_path] (video?)(tracking) (dst_path)" << endl << endl;
   cout << "function: ['image', 'images', 'video', 'help']" << endl;
   cout << "\timage: run detection on a single image" << endl;
-  cout << "\timages: run det
+  cout << "\timages: run detection on all images in a folder" << endl;
+  cout << "\tvideo: run detection on a video" << endl;
+  cout << "\thelp: display this message" << endl << endl;
+  cout << "src_path: path to element(s) to run detection on, depending on function" << endl;
+  cout << "\timage: path to a single image" << endl;
+  cout << "\timages: path to a folder containing one or more images" << 

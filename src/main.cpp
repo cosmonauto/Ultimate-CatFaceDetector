@@ -53,4 +53,5 @@ void help( char *argv[] )
   cout << "\tvideo: path to a video" << endl << endl;
   cout << "tracking(for video only)[default = 0] if set to 1, detect less frequently and use tracking in between" << endl << endl;
   cout << "dst_path (optional): path to the folder in which you wish the program to write the detection results;" << endl;
-  cout << "\tif not specified, the program will sim
+  cout << "\tif not specified, the program will simply show the detection in a GUI" << endl << endl;
+}

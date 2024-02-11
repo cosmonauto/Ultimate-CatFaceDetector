@@ -49,4 +49,8 @@ void help( char *argv[] )
   cout << "\thelp: display this message" << endl << endl;
   cout << "src_path: path to element(s) to run detection on, depending on function" << endl;
   cout << "\timage: path to a single image" << endl;
-  cout << "\timages: path to a folder containing one or more images" << 
+  cout << "\timages: path to a folder containing one or more images" <<  endl;
+  cout << "\tvideo: path to a video" << endl << endl;
+  cout << "tracking(for video only)[default = 0] if set to 1, detect less frequently and use tracking in between" << endl << endl;
+  cout << "dst_path (optional): path to the folder in which you wish the program to write the detection results;" << endl;
+  cout << "\tif not specified, the program will sim
